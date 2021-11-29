@@ -1,24 +1,30 @@
 .navbar-container{
-    padding: 0 10%;
-    border:1px solid rgba(0,0,0,0.1);
+    padding: 0 12% 0 10rem;
+    border:1px solid rgba(0,0,0,0.25);
     display: flex;
+    align-items: center;
     justify-content: space-between;
     .brand{
         display:flex;
-        margin:0.8rem;
+        
         align-items: center;
         font-weight: 900;
+        &:hover{
+            cursor: pointer;
+        }
     }
     .brand-icon{
+        margin-bottom:0.2rem;
         font-size: 2.5rem;
     }
     .registro{
         display: flex;
         align-items: center;
-        margin:1rem 0rem;
+        justify-content: center;
+        height: 50px;
+        width: 100px;
         text-decoration: none;
         font-size: 1.2rem;
-        padding: 1rem;
         border-radius: 1.2rem;
         color:white;
         background-color: #1c8cfc;
