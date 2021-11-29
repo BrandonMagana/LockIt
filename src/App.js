@@ -8,14 +8,15 @@ import {
 } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Logs from "./pages/Logs";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
       <div className="landpage">
-        <button>pene</button>
+        <Navbar/>
         <button>pene</button>
       </div>
-      
+      // <Dashboard/> 
   );
 }
 

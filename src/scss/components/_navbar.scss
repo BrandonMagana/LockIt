@@ -1,0 +1,33 @@
+.navbar-container{
+    padding: 0 10%;
+    border:1px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    .brand{
+        display:flex;
+        margin:0.8rem;
+        align-items: center;
+        font-weight: 900;
+    }
+    .brand-icon{
+        font-size: 2.5rem;
+    }
+    .registro{
+        display: flex;
+        align-items: center;
+        margin:1rem 0rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 1rem;
+        border-radius: 1.2rem;
+        color:white;
+        background-color: #1c8cfc;
+        transition: ease-in-out 0.2s;
+        &:hover{
+            background-color:#ececf4;
+            border:1px solid black;
+            color:black;
+            cursor: pointer;
+        }
+    }
+}
