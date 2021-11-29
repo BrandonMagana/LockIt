@@ -1,0 +1,6 @@
+@import"../util/noneInteractiveCard";
+@import"../util/card";
+
+.visitsChart{
+    @include getCardStyles();
+}

@@ -1,0 +1,37 @@
+@import"./card";
+
+@mixin getNoneInteractiveCardStyles(){
+    .nonInteractive{
+        @include getCardStyles();
+
+        span{
+            font-weight: 700;
+            color:rgb(109,109,109);
+        }
+
+        .nonInteractive-info{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 80%;
+            font-size: 5rem;
+            .nonInteractive-icon{
+                height: auto;
+                padding-top: 1.5rem;
+            }
+            h3{
+                font-size: 2rem;
+            }
+        
+            p{
+                font-size: 2rem;
+                padding-left: 1rem;
+            }
+        
+            .visitas{
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

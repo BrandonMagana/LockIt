@@ -1,0 +1,21 @@
+.topbar{
+    margin: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h4{
+        font-size: 1rem;
+    }
+    
+    span{
+        font-weight: 700;
+        color:rgb(109,109,109);
+    }
+
+    .info{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}

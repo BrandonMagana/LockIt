@@ -1,0 +1,27 @@
+@import"./card";
+
+@mixin getInteractiveCardStyles() {
+    .interactive{
+        @include getCardStyles();
+        span{
+            font-weight: 700;
+            color:rgb(109,109,109);
+        }
+        .interactive-info{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 80%;
+            font-size: 5rem;
+            .interactive-icon{
+                height: auto;
+                padding-top: 1.5rem;
+            }
+            h3{
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+    }
+    
+}

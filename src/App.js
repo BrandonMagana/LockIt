@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./scss/index.scss";
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Link,
+  Route,
+  useHistory,
+} from "react-router-dom";
+import VisitsMetrics from "./components/VisitsMetrics";
+import DoorState from "./components/DoorState";
+import Visits from "./components/Visits";
+import Toggle from "./components/Toggle";
+import Lock from "./components/Lock";
+import Alarm from "./components/Alarm";
+import Metrics from "./components/Metrics";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="dashboard">
+      <Sidebar/>
+      <Metrics/>
     </div>
   );
 }
