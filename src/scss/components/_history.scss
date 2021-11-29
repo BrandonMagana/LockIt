@@ -1,0 +1,28 @@
+.history{
+    margin: 1.5rem;
+}
+.report{
+    margin:0 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 75%;
+
+    .log{
+        font-size: 1.3rem;
+        display:flex;
+        gap:2rem;
+        margin-bottom:2rem;
+        align-items: center;
+    }
+
+    .icono{
+        color:black;
+        font-size: .5rem;
+    }
+}
