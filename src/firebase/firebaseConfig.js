@@ -4,13 +4,13 @@ import "@firebase/database";
 import "@firebase/auth";
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyA5Ok0ZAenmcds4H8BsoOtii0chhavTDNY",
-  authDomain: "lockit-a8bd0.firebaseapp.com",
-  databaseURL: "https://lockit-a8bd0-default-rtdb.firebaseio.com",
-  projectId: "lockit-a8bd0",
-  storageBucket: "lockit-a8bd0.appspot.com",
-  messagingSenderId: "73690065350",
-  appId: "1:73690065350:web:f220a5b1ddf2c3ec56eac7",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABSE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 });
 
 const auth = firebase.auth();
