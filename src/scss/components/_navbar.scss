@@ -4,11 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .brand{
+    a{
         display:flex;
         
         align-items: center;
         font-weight: 900;
+        text-decoration: none;
+        color:black;
         &:hover{
             cursor: pointer;
         }
@@ -24,7 +26,7 @@
         height: 50px;
         width: 100px;
         text-decoration: none;
-        font-size: 1.2rem;
+        font-size: 1rem;
         border-radius: 1.2rem;
         color:white;
         background-color: #1c8cfc;

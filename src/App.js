@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase/firebaseConfig";
 import "./scss/index.scss";
 import {
   BrowserRouter as Router,
@@ -6,18 +9,40 @@ import {
   Route,
   useHistory,
 } from "react-router-dom";
+
+import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
 import Logs from "./pages/Logs";
-import LandingPage from "./pages/LandingPage";
-import Navbar from "./components/Navbar";
-import Login from "./components/Login";
-import SignUpForm from "./components/SignUpForm";
-import SignUp from "./pages/SignUp";
 
 function App() {
-  return (
-    <SignUp/>
-  );
+  const [loading, setLoading] = useState(false);
+  const [user, loadingUser, errorUser] = useAuthState(auth);
+
+  if(!user){
+    return (
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <LandingPage setLoading={setLoading} />
+          </Route>
+        </Switch>
+    </Router>);
+  }else{
+    return(
+      <Router>
+        <Switch>
+          <Route path="/dashboard" exact>
+            <Dashboard/>
+          </Route>
+          <Route path="/reports" exact>
+            <Logs/>
+          </Route>
+          <Route path="/" exact>
+            <LandingPage setLoading={setLoading} />
+          </Route>
+        </Switch>
+      </Router>);
+  }
 }
 
 export default App;

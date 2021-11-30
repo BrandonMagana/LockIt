@@ -16,23 +16,23 @@ function sidebar() {
                 </div>
                 <div className="links">
                     <ul>
-                        {/* <Link to="/"> */}
+                        <Link to="/dashboard">
                             <li>
                                 <BsFillDoorClosedFill/>
                                 <p className="none">Vista General</p>
                             </li>
-                        {/* </Link> */}
+                        </Link>
                             <li>
-                        {/* <Link to="/reports"> */}
+                        <Link to="/reports">
                                 <VscHistory/>
                                 Historial
-                        {/* </Link> */}
+                        </Link>
                             </li>
                             <li>
-                        {/* <Link to="/"> */}
+                        <Link to="/">
                                 <CgLogOut/>
                                 Cerrar Sesión
-                        {/* </Link>  */}
+                        </Link> 
                             </li>
                     </ul>
                 </div>

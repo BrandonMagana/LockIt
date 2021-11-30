@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import {Link} from "react-router-dom";
 function SignUpForm() {
     return (
         <div className="signup-container">
@@ -14,7 +14,7 @@ function SignUpForm() {
                         <input type="password" className="password" id="password" placeholder="Ingresa Contraseña"/>
                         <label htmlFor="password">Confirma contraseña: </label>
                         <input type="password" className="passwordConfirm" id="passwordConfirm" placeholder="Ingresa Contraseña Nuevamente"/>
-                        <button>Enviar</button>
+                        <Link to="/dashboard"><button>Enviar</button></Link>
                 </form>
             </div>
         </div>
