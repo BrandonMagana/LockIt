@@ -5,9 +5,7 @@ import "./scss/index.scss";
 import {
   BrowserRouter as Router,
   Switch,
-  Link,
   Route,
-  useHistory,
 } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage";

@@ -1,0 +1,10 @@
+.on-off{
+    color:white;
+    width: 10rem;
+    background-color:#000000;
+    margin-top: 0rem;
+    &:hover{
+        color:black;
+        background-color:#ececf4;
+    }
+}

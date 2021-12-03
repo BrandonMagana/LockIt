@@ -18,6 +18,10 @@
             .nonInteractive-icon{
                 height: auto;
                 padding-top: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
             h3{
                 font-size: 2rem;
@@ -31,6 +35,13 @@
             .visitas{
                 display: flex;
                 align-items: center;
+            }
+            .vistante{
+                color:#349afff8;
+                font-size: 1.5rem;
+                font-weight: bold;
+                font-style: italic;
+                padding: 2rem 0 0 0;
             }
         }
     }

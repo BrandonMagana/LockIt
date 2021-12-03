@@ -1,14 +1,17 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {RiAlarmWarningLine,RiAlarmWarningFill} from "react-icons/ri"
-import Toggle from './Toggle';
+import OnOff from './OnOff';
+import { db } from "../firebase/firebaseConfig";
+import { useObjectVal } from "react-firebase-hooks/database";
 
 function Alarm() {
-    const [toggled,setToggled] = useState(false);
+    const [activo, loadingActivo, errorActivo] = useObjectVal(
+        db.ref("/Puerta/alarm"));
+
     const data={
         titulo : "Alarma",
         subtitulo : "Estado de la alarma",
-        icono: toggled ? RiAlarmWarningLine: RiAlarmWarningFill,
-        mensaje: toggled ? "Activada": "Desactivada"
+        icono: activo ? RiAlarmWarningLine: RiAlarmWarningFill,
     };
 
     return (
@@ -17,10 +20,10 @@ function Alarm() {
             <span>{data.subtitulo}</span>
             <div className="interactive-info">
                 <div className="interactive-icon">
-                <data.icono/>
+                    <data.icono/>
                 </div>
-                <h3 className="interactive-message">{data.mensaje}</h3>
-                <Toggle onChange={(event) =>setToggled(event.target.checked)}/>
+                <OnOff messages={["Desactivada", "Activada"]} 
+                status={activo} path={"/Puerta/alarm"} />
             </div>
         </div>
     )

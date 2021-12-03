@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {Link} from "react-router-dom";
 import { auth } from "../firebase/firebaseConfig";
 import { useHistory } from "react-router-dom";
 
@@ -11,7 +10,7 @@ function Login({setLoading}) {
     
       const [loginLoading, setLoginLoading] = useState(false);
     
-      const [error, setError] = useState("");
+      const [error, setError] = useState("Todos los campos son obligatorios");
       
       const handleChange = (e) => {
           setFormData({
@@ -23,7 +22,6 @@ function Login({setLoading}) {
         let history = useHistory();
         const handleSubmit = (e) => {
             setLoginLoading(true);
-            console.log("pene")
             e.preventDefault();
             if (!formData.email.trim() || !formData.password.trim()) {
                 setError("Todos los campos son obligatorios");
@@ -51,7 +49,6 @@ function Login({setLoading}) {
             .catch(() => {
                 setLoginLoading(false);
                 setError("Something went wrong");
-                // alert(error)
             });
       };
 

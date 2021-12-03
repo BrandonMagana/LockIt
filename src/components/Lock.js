@@ -1,25 +1,29 @@
-import React,{useState} from 'react'    
+import React from 'react'    
 import {BiLockOpen, BiLock} from "react-icons/bi"
-import Toggle from "./Toggle";
+import OnOff from "./OnOff";
+import { db } from "../firebase/firebaseConfig";
+import { useObjectVal } from "react-firebase-hooks/database";
 
 function Lock() {
-    const [toggled,setToggled] = useState(false);
+    const [activo, loadingActivo, errorActivo] = useObjectVal(
+    db.ref("/Puerta/lock"));
+
     const data={
         titulo : "Candado",
         subtitulo :"Estado de la cerradura",
-        icono: toggled ? BiLock : BiLockOpen,
-        mensaje: toggled ? "Bloqueada" : "Desbloqueada"
+        icono: activo ? BiLockOpen:BiLock,
     };
+
     return (
         <div  className="interactive">
             <h3>{data.titulo}</h3>
             <span>{data.subtitulo}</span>
             <div className="interactive-info">
                 <div className="interactive-icon">
-                <data.icono/>
+                    <data.icono/>
                 </div>
-                <h3 className="interactive-message">{data.mensaje}</h3>
-                <Toggle onChange={(event) =>setToggled(event.target.checked)}/>
+                <OnOff messages={["Bloqueada","Desbloqueda"]} 
+                status={activo} path={"/Puerta/lock"} />
             </div>
         </div>
     )
