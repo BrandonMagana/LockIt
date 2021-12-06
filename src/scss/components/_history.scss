@@ -2,6 +2,12 @@
     margin: 1.5rem;
 }
 .report{
+    transition: 0.3s ease-in-out;
+    &:hover{
+        transform: translateY(-4px);
+        box-shadow: rgba(0,0,0,0.1) 0px 10px 15px 25px,
+        rgba(0,0,0,0.4) 0px 10px 10px -5px;   
+    }
     margin-top: 2rem;
     margin-left: 30%;
     margin-right: 30%;

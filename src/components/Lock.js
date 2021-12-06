@@ -11,7 +11,7 @@ function Lock() {
     const data={
         titulo : "Candado",
         subtitulo :"Estado de la cerradura",
-        icono: activo ? BiLockOpen:BiLock,
+        icono: activo ? BiLock : BiLockOpen
     };
 
     return (

@@ -10,7 +10,7 @@ function Navbar() {
                     <div className="brand-icon">
                         <BsFillDoorOpenFill/>
                     </div>
-                    {/* <h1>LockIt!</h1> */}
+                    <h1>LockIt!</h1>
                 </Link>
             </div>
             {/* {registro ? <Link to="/signup"><a className="registro">Registrate</a> 

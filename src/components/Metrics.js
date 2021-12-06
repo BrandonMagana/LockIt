@@ -9,7 +9,7 @@ import VisitsMetrics from './VisitsMetrics'
 function Metrics() {
     return (
         <div className="metrics">
-            <Topbar name="Vista General"/>
+            <Topbar name="Vista General" user="Equipo 7 Lock-It!"/>
             <div className="grid_one">
                 <Lock/>
                 <Alarm/>

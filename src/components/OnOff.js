@@ -17,7 +17,7 @@ function OnOff({messages, status,path}) {
     }
     return (
         <button className="on-off" onClick={()=>ChangeStatus()}>
-            {activo === 0 ? messages[0] : messages[1]}  
+            {activo === 1 ? messages[0] : messages[1]}  
         </button>
     )
 }

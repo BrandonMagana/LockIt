@@ -11,7 +11,7 @@ function Alarm() {
     const data={
         titulo : "Alarma",
         subtitulo : "Estado de la alarma",
-        icono: activo ? RiAlarmWarningLine: RiAlarmWarningFill,
+        icono: activo ? RiAlarmWarningFill: RiAlarmWarningLine,
     };
 
     return (
@@ -22,7 +22,7 @@ function Alarm() {
                 <div className="interactive-icon">
                     <data.icono/>
                 </div>
-                <OnOff messages={["Desactivada", "Activada"]} 
+                <OnOff messages={["Activada", "Desactivada"]} 
                 status={activo} path={"/Puerta/alarm"} />
             </div>
         </div>

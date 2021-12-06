@@ -40,7 +40,7 @@ function History() {
     return (
        <div>
             <div className="history">
-                <Topbar name="Historial de visitas"/>
+                <Topbar name="Historial de visitas" user="Equipo 7 Lock-It!"/>
                 <span>Fecha y hora en las que se han recibido visitas</span>
             </div>
             {!loading && !loadingkeys && !loadiNng ?
