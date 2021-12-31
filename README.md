@@ -4,7 +4,7 @@ By:
 - Pablo Ortega ([@PAOK-2001](https://github.com/PAOK-2001))
 - Brandon Magaña ([@BrandonMagana](https://github.com/BrandonMagana))
 
-LockIt! is an Internet of Things proyect that uses the ESP8266 microcontroller and the RaspberryPi to "smarify" your front door, allowing you to manage and monitor it in realtime as well as keep a log of when the door is open (day and exact time). Aditionally, it also allows the user to unlock the door using facial recognitior (This last function was developed by my collaborato and can be found in here [LockIT](https://github.com/PAOK-2001/LockIt-))
+LockIt! is an Internet of Things project that uses the ESP8266 microcontroller and the RaspberryPi to "smarify" your front door, allowing you to manage and monitor it in realtime as well as keep a log of when the door is open (day and exact time). Aditionally, it also allows the user to unlock the door using facial recognitior (This last function was developed by my collaborato and can be found in here [LockIT](https://github.com/PAOK-2001/LockIt-))
 
 ## About the electronics
 
