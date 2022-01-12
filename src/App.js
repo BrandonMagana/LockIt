@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase/firebaseConfig";
 import "./scss/index.scss";
@@ -13,19 +13,20 @@ import Dashboard from "./pages/Dashboard";
 import Logs from "./pages/Logs";
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  //Getting user with react-firebase-hook for authetication, if valid returns user
   const [user, loadingUser, errorUser] = useAuthState(auth);
-
+  //If user not valid, keep on LandingPage
   if(!user){
     return (
       <Router>
         <Switch>
           <Route path="/" exact>
-            <LandingPage setLoading={setLoading} />
+            <LandingPage/>
           </Route>
         </Switch>
     </Router>);
   }else{
+    //Go to main Dashboard once the user is authenticated
     return(
       <Router>
         <Switch>
@@ -36,7 +37,7 @@ function App() {
             <Logs/>
           </Route>
           <Route path="/" exact>
-            <LandingPage setLoading={setLoading} />
+            <LandingPage/>
           </Route>
         </Switch>
       </Router>);

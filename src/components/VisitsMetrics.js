@@ -1,8 +1,9 @@
 import React from 'react';
 import {AreaChart, Area, Tooltip, ResponsiveContainer, XAxis} from "recharts";
-import { useListVals, useListKeys,useObject } from 'react-firebase-hooks/database';
+import {useListKeys, useObject } from 'react-firebase-hooks/database';
 import { db } from "../firebase/firebaseConfig";
 
+//Number to text dictionary that is used for creating a dictionary of visits per day
 const number2Text={
   "01" : "Ene",
   "02" : "Feb",
@@ -17,50 +18,23 @@ const number2Text={
   "11" : "Nov",
   "12" : "Dic" 
 }
-const data=[
-    {
-        "dia": "Nov 22",
-        "visitas": 4,
-      },
-      {
-        "dia": "Nov 23",
-        "visitas": 3,
-      },
-      {
-        "dia": "Nov 24",
-        "visitas": 2,
-      },
-      {
-        "dia": "Nov 25",
-        "visitas": 2,
-      },
-      {
-        "dia": "Nov 26",
-        "visitas": 1,
-      },
-      {
-        "dia": "Nov 27",
-        "visitas": 4,
-      },
-      {
-        "dia": "Nov 28",
-        "visitas": 6,
-      }
-];
-
 
 function VisitsMetrics() {
-  const [values, loading, error] = useListVals(db.ref("Puerta/historial"));
-  const [keys, loadingkeys, errorkeys] = useListKeys(db.ref("Puerta/historial"));
-  const [snapshot, loadiNng, errRor] = useObject(db.ref("Puerta/historial"));
+  //Getting all keys that represents a date from database subtree called "historial"
+  const [keys, loadingKeys, keysError] = useListKeys(db.ref("Puerta/historial"));
+
+  //Returns all data from the data base subtree called "historial"
+  const [Snapshot, loadingSnapshot, SnapshotError] = useObject(db.ref("Puerta/historial"));
+  
   let historial=[]
   
-  if(!loadiNng && !loadingkeys && !loading){
+  //pushing dictionary (day : visits) to historial array
+  if(!loadingSnapshot && !loadingKeys){
       for(let i=0; i<keys.length; i++){
-              let x={}
-              x["dia"]=number2Text[keys[i].slice(0,2)] + " " +keys[i].slice(3, 5)
-              x["visitas"]=snapshot.val()[keys[i]]["visitas"]
-              historial.push(x);
+              let day={}
+              day["dia"] = number2Text[keys[i].slice(0,2)] + " " +keys[i].slice(3, 5)
+              day["visitas"]=Snapshot.val()[keys[i]]["visitas"]
+              historial.push(day);
       }
   }
 
@@ -68,8 +42,9 @@ function VisitsMetrics() {
   return (
         <div className="visitsChart">
             <h3>Visitas diarias</h3>
-            {!loadiNng && !loadingkeys && !loading ? <> 
+            {!loadingSnapshot && !loadingKeys ? <> 
             <span>{historial[0]["dia"]} - {historial[historial.length-1]["dia"]}</span>
+            {/* Setting up the chart */}
             <ResponsiveContainer width="100%" height="80%">
                 <AreaChart data={historial} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
                     <defs>

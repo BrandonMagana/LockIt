@@ -3,6 +3,7 @@ import  {BsPeopleFill} from "react-icons/bs";
 import { db } from "../firebase/firebaseConfig";
 import { useObjectVal } from "react-firebase-hooks/database";
 
+//Convert month prefix to number, this will be used in order to fetch the date data
 const dateConverter={
     Dec : "12",
     Nov : "11",
@@ -19,22 +20,26 @@ const dateConverter={
 }
 function Visits() {
         
+    //Formating string
+    let fecha= new Date().toDateString();
+    fecha=fecha.slice(4)
+    fecha= fecha.replace(" ", "_");
+    fecha= fecha.replace(" ", "_");
+    let prefix = fecha.slice(0,3);
+    prefix = dateConverter[prefix]
+    fecha = prefix + fecha.slice(3) 
 
-        let fecha= new Date().toDateString();
-        fecha=fecha.slice(4)
-        fecha= fecha.replace(" ", "_");
-        fecha= fecha.replace(" ", "_");
-        let prefix = fecha.slice(0,3);
-        prefix = dateConverter[prefix]
-        fecha = prefix + fecha.slice(3) 
-
+    //Getting the corresponding date's data from firebase
     const [visitas, loadingVisitas, errorVisitas] = useObjectVal(
         db.ref(`Puerta/historial/${fecha}/visitas`))
+
+    //Getting Camera status from firebase
     const [visita, loadingVisita, errorVisita] = useObjectVal(
             db.ref(`Puerta/isCamera`))
 
     return (
         <div className="nonInteractive">
+            {/* Logic used to displayed the data once the data has been fetched */}
             {!loadingVisita && !loadingVisitas ? 
             <>
             <h3>Número de Visitas</h3>

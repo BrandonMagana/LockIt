@@ -6,6 +6,10 @@ import Topbar from './Topbar'
 import Visits from './Visits'
 import VisitsMetrics from './VisitsMetrics'
 
+/*
+    Metrics Component 
+    This component compile all the othe cards of the dashboard
+*/
 function Metrics() {
     return (
         <div className="metrics">

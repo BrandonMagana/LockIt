@@ -37,7 +37,6 @@ function Login({setLoading}) {
         //Formatting the inputs
         if (!formData.email.trim() || !formData.password.trim()) {
             setError("Todos los campos son obligatorios");
-            alert(error);
             return;
         }
         
@@ -58,7 +57,7 @@ function Login({setLoading}) {
         .catch(() => {
             //Displaying errors
             setError("Something went wrong");
-            alert(error)
+            // alert(error)
         });
     };
 

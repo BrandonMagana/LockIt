@@ -34,7 +34,7 @@ function Lock() {
                     <data.icono/>
                 </div>
                 <OnOff messages={["Bloqueada","Desbloqueda"]} 
-                status={activo} path={"/Puerta/lock"} />
+                path={"/Puerta/lock"} />
             </div>
         </div>
     )

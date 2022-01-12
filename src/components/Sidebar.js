@@ -3,6 +3,11 @@ import {BsFillDoorOpenFill,BsFillDoorClosedFill} from "react-icons/bs";
 import {VscHistory} from "react-icons/vsc";
 import {CgLogOut} from "react-icons/cg";
 import {Link} from "react-router-dom";
+/*
+    Sidebar Component:
+    Component that displays the different navegation dashboard tabs.
+    This component uses Link to create endpoints for the routing.
+*/
 
 function sidebar() {
     return (
@@ -16,6 +21,7 @@ function sidebar() {
                 </div>
                 <div className="links">
                     <ul>
+                        {/* Link to dashboard */}
                         <Link to="/dashboard">
                             <li>
                                 <BsFillDoorClosedFill/>
@@ -23,12 +29,14 @@ function sidebar() {
                             </li>
                         </Link>
                             <li>
+                        {/* Link to Visits history page */}
                         <Link to="/reports">
                                 <VscHistory/>
                                 Historial
                         </Link>
                             </li>
                             <li>
+                        {/* Link to landing page */}
                         <Link to="/">
                                 <CgLogOut/>
                                 Cerrar Sesión

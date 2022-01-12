@@ -34,7 +34,7 @@ function Alarm() {
                     <data.icono/>
                 </div>
                 <OnOff messages={["Activada", "Desactivada"]} 
-                status={activo} path={"/Puerta/alarm"} />
+                 path={"/Puerta/alarm"} />
             </div>
         </div>
     )

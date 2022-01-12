@@ -1,3 +1,5 @@
+//Firebase configuration set up as google stablished on documentation
+
 import firebase from "@firebase/app";
 
 import "@firebase/database";
@@ -18,4 +20,5 @@ const db = firebase.database();
 
 auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
+//Exporting database and authetication modules from firebase.
 export { auth, db };
